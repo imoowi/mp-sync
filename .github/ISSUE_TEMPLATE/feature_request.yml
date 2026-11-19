@@ -1,0 +1,33 @@
+name: Feature request
+description: 建议新的平台、能力或改进
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本项目只保存草稿，不支持自动发布、刷量、绕过验证码或访问他人账号数据的功能。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 请描述当前工作流中的具体不便。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: 相关平台或页面
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: 约束确认
+      options:
+        - label: 该功能只创建草稿，不会自动发布或绕过平台鉴权。
+          required: true

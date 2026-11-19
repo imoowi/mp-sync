@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header id="hd">
+    <h1>公众号文章同步助手</h1>
+
+  </header>
+
+  <section id="article" class="card">
+    <div id="status">正在读取当前页面…</div>
+  </section>
+
+  <section class="card sync-only">
+    <div class="row head">
+      <strong>同步到</strong>
+      <label class="all"><input type="checkbox" id="all" /> 全选</label>
+    </div>
+    <ul id="platforms"></ul>
+  </section>
+
+  <button id="sync" class="sync-only" disabled>同步为草稿</button>
+  <p class="tip sync-only">只保存为各平台草稿，请到对应平台确认后发布。</p>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

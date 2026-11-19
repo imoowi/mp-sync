@@ -1,0 +1,42 @@
+body {
+  width: 340px;
+  margin: 0;
+  padding: 12px;
+  font: 13px/1.5 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #1f2329;
+  background: #f5f6f7;
+}
+header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+h1 { font-size: 16px; margin: 0; color: #07c160; }
+.sub { color: #8a919f; }
+.card { background: #fff; border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+.title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.meta { color: #8a919f; font-size: 12px; }
+.error { color: #e5484d; }
+.row { display: flex; align-items: center; justify-content: space-between; }
+.head { margin-bottom: 6px; }
+.all { color: #8a919f; font-size: 12px; }
+ul { list-style: none; margin: 0; padding: 0; }
+li { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-top: 1px solid #f0f1f2; }
+li label { flex: 1; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.site { font-size: 12px; color: #07c160; text-decoration: none; white-space: nowrap; }
+.site:hover { text-decoration: underline; }
+.state {font-size: 12px; color: #8a919f; max-width: 160px; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.state.ok { color: #07c160; }
+.state.fail { color: #e5484d; white-space: normal; }
+.state a { color: inherit; }
+button {
+  width: 100%; padding: 9px; border: 0; border-radius: 8px;
+  background: #07c160; color: #fff; font-size: 14px; cursor: pointer;
+}
+button:disabled { background: #b7e4c7; cursor: not-allowed; }
+.edited { color: #f59e0b; }
+.article-actions { display: flex; gap: 6px; margin-top: 8px; }
+button.small { width: auto; padding: 3px 10px; font-size: 12px; border-radius: 6px; }
+button.small.ghost { background: #fff; color: #8a919f; border: 1px solid #e5e6eb; }
+/* 编辑页内嵌的同步面板：页面高度固定为 iframe 高度，只让平台列表滚动 */
+body.fit { height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; }
+body.fit > * { flex-shrink: 0; }
+body.fit > .card.sync-only { flex: 0 1 auto; min-height: 120px; display: flex; flex-direction: column; }
+body.fit #platforms { flex: 1 1 auto; min-height: 0; overflow-y: auto; }
+.tip {color: #8a919f; font-size: 12px; text-align: center; margin: 8px 0 0; }

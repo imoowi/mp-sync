@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "公众号文章同步助手",
+  "version": "0.2.3",
+  "description": "一键把微信公众号文章保存为其他内容平台的草稿，支持本地编辑、自动保存和草稿链接。",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_title": "公众号文章同步助手：公众号文章页展开/缩小同步面板；其他页面新建文章",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+  },
+  "content_scripts": [
+    { "matches": ["https://mp.weixin.qq.com/s*"], "js": ["content/panel.js"], "run_at": "document_idle" }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["popup/*", "lib/*"], "matches": ["https://mp.weixin.qq.com/*"] }
+  ],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["activeTab", "scripting", "storage", "cookies", "tabs", "clipboardWrite", "declarativeNetRequestWithHostAccess"],
+  "host_permissions": [
+    "https://mp.weixin.qq.com/*",
+    "https://*.qpic.cn/*",
+    "https://*.juejin.cn/*",
+    "https://*.csdn.net/*",
+    "https://*.zhihu.com/*",
+    "https://*.segmentfault.com/*",
+    "https://segmentfault.com/*",
+    "https://*.oschina.net/*",
+    "https://*.51cto.com/*",
+    "https://*.xiaohongshu.com/*",
+    "https://*.toutiao.com/*",
+    "https://baijiahao.baidu.com/*",
+    "https://*.douban.com/*",
+    "https://*.jianshu.com/*",
+    "https://*.meipian.cn/*",
+    "https://*.okjike.com/*",
+    "https://*.bilibili.com/*",
+    "https://mp.sohu.com/*",
+    "https://*.xueqiu.com/*",
+    "https://*.woshipm.com/*",
+    "https://*.douyin.com/*",
+    "https://imagex.bytedanceapi.com/*",
+    "https://*.snssdk.com/*",
+    "https://*.bytedance.com/*",
+    "https://*.aliyuncs.com/*",
+    "https://*.myhuaweicloud.com/*",
+    "https://*.myqcloud.com/*",
+    "https://*.qiniup.com/*"
+  ]
+}

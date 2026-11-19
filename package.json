@@ -1,0 +1,17 @@
+{
+  "name": "mp-sync",
+  "version": "0.2.3",
+  "private": true,
+  "type": "module",
+  "description": "把微信公众号文章保存为掘金、CSDN、知乎、小红书等平台草稿的 Chromium 浏览器扩展",
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\" tests/run.mjs",
+    "pack": "node scripts/pack.mjs",
+    "pack:skip-test": "node scripts/pack.mjs --skip-test",
+    "icons": "node scripts/make-icons.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}

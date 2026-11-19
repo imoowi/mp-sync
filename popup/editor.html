@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <!-- 公众号图片防盗链：不发送 Referer 才能正常显示 -->
+  <meta name="referrer" content="no-referrer" />
+  <title>公众号文章同步助手 编辑文章</title>
+  <link rel="stylesheet" href="editor.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <strong>公众号文章同步助手 编辑</strong>
+    <span class="tools">
+      <button data-wrap="## " title="二级标题">H2</button>
+      <button data-wrap="### " title="三级标题">H3</button>
+      <button data-wrap="**|**" title="加粗 Ctrl+B"><b>B</b></button>
+      <button data-wrap="*|*" title="斜体 Ctrl+I"><i>I</i></button>
+      <button data-wrap="`|`" title="行内代码">`code`</button>
+      <button data-wrap="- " title="无序列表">• 列表</button>
+      <button data-wrap="1. " title="有序列表">1. 列表</button>
+      <button data-wrap="> " title="引用">引用</button>
+      <button data-wrap="[|](https://)" title="链接">链接</button>
+      <button data-wrap="```&#10;|&#10;```" title="代码块">代码块</button>
+      <label class="view"><input type="checkbox" id="preview-toggle" checked /> 预览</label>
+    </span>
+    <span class="actions">
+      <span id="saved"></span>
+      <button id="reset" class="ghost">恢复原文</button>
+      <button id="save">保存</button>
+      <button id="new-doc" class="ghost" title="新建一篇空白文章（当前文章已自动保存）">新建</button>
+      <button id="import-md" class="ghost" title="从本地 .md 文件导入标题和正文">导入 .md</button>
+      <input type="file" id="import-file" accept=".md,.markdown,.txt,text/markdown,text/plain" hidden />
+      <button id="export-md" class="ghost" title="把当前标题和正文下载为 .md 文件">导出 .md</button>
+      <button id="open-sync" class="primary">同步到平台</button>
+    </span>
+  </header>
+
+  <aside id="sync-panel" hidden>
+    <div class="sync-bar"><b>同步到平台</b><button id="close-sync" title="关闭">×</button></div>
+    <iframe id="sync-frame"></iframe>
+  </aside>
+
+  <div class="meta">
+    <input id="title" placeholder="标题" />
+    <textarea id="summary" rows="1" placeholder="摘要（部分平台使用）"></textarea>
+  </div>
+
+  <main>
+    <textarea id="md" spellcheck="false" placeholder="Markdown 正文"></textarea>
+    <article id="preview"></article>
+  </main>
+
+  <script type="module" src="editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全漏洞
+    url: https://github.com/imoowi/mp-sync/security/advisories/new
+    about: 请私下报告可能泄露凭据或用户数据的问题
